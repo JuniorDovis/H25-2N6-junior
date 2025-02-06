@@ -1,6 +1,6 @@
 import os                             # N'enlevez pas ces lignes.
 os.chdir(os.path.dirname(__file__))   # Elles permettent de se positionner dans le répertoire de ce script
-
+import csv
 
 
 # Importez le module csv
@@ -25,6 +25,12 @@ os.chdir(os.path.dirname(__file__))   # Elles permettent de se positionner dans 
 
 
 ficher_a_lire = os.path.join("csvs","Ex4 Emplois Reseautique.csv" )
+
+with open("csvs/Ex4 Emplois Reseautique.csv","r", encoding="utf-8")as file:
+    reader = csv.reader(file, delimiter=";")
+    next(reader)
+    for line in reader:
+     print (line)
 
 
 
